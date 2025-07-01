@@ -1,0 +1,23 @@
+main {
+    font-size: 20px;
+    text-align: center;
+    color: rgb(124, 124, 55);
+}
+
+.intro {
+    background-color: rgb(115, 177, 177);
+}
+
+.info-link {
+    background-color: azure;
+}
+
+.intro-me {
+    font-weight: 300;
+    font-size: 30px;
+}
+
+.intro-major {
+    font-weight: 500;
+    font-size: 40px;
+}

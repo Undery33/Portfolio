@@ -1,0 +1,9 @@
+ const [selected, setSelected] = useState('');
+
+  const descriptions = {
+    Python: '빅데이터를 보다 쉽게 제어하기 위해 사용하였습니다.',
+    JS: '프론트앤드 개발 및 Discord 봇 개발을 위해 사용하였습니다. (Node.js, Discord.js, React)',
+    C: '임베디드 시스템 구축과 OpenCV를 이용한 이미지 분석을 위해 사용하였습니다.',
+    AWS: 'AWS에서 제공하는 번역 기능 및 EC2를 이용한 봇 활성화, 웹 배포에 사용하였습니다.',
+    AI: 'Transformer 모델을 이용한 예측 및 LLM에 대한 분석, OpenAI 내 GPT-4o API를 사용한 Agent(MCP)를 적용해보았습니다.'
+  };

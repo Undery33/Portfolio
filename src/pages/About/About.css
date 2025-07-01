@@ -1,0 +1,27 @@
+.info-link {
+    text-align: left;
+    font-size: 50px;
+    font-weight: 600;
+    padding: 3em 0 0 4em;
+}
+
+.about-me-intro {
+    font-size: 20px;
+    font-weight: 300;
+    margin-top: 0em;
+}
+
+.introduce {
+    display: flex;
+    gap: 5em;
+    align-items: flex-start;
+}
+
+.profile {
+    text-align: left;
+    line-height: 2;
+}
+
+.intro-about-me {
+    text-align: right;
+}
