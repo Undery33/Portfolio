@@ -1,11 +1,10 @@
 :root {
-    --header-padding: 16px;
-    --site-max-width: 1300px;
+    --header-padding: 3vh;
+    --site-max-width: 100%;
 }
 
 header {
     position: absolute;
-    top: 12px;
     left: 0;
     width: 100%;
     z-index: 1000;
@@ -34,9 +33,16 @@ header a.active {
     padding: 0 var(--header-padding);
 }
 
+.all-menu {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-top: -0.7em;
+}
+
 .menu {
     display: flex;
-    gap: 100px;
+    gap: 6vh;
     font-size: 18px;
 }
 

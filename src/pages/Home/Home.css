@@ -1,12 +1,40 @@
 main {
     font-size: 20px;
-    text-align: center;
     color: #1E2022;
+}
+
+.icon {
+    position: fixed;
+    top: 50%;
+    left: 28px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+    gap: 28px;
+}
+
+.icon img {
+    width: 40px;
+    display: block;
+    padding-top: 5vh;
+    filter: grayscale(100%);
+    transition: filter 0.5s ease;
+}
+
+.icon img.active {
+    filter: grayscale(0%);
 }
 
 .intro {
     background-color: #F0F5F9;
-    padding: 300px 0 150px 0;
+    padding: 25% 0 40% 0;
+}
+
+.intro-me, .intro-major {
+    margin-left: 24vh;
+
 }
 
 .intro-me {
@@ -19,10 +47,74 @@ main {
     font-size: 40px;
 }
 
+.intro-profile {
+    width: 31em;
+    float: right;
+    margin: -36vh 12%;
+}
+
 .about {
     background-color: #C9D6DF;
+    color: #52616B;
+    padding: 12vh 0 0 28vh;
+}
+
+.about-content {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.about-content img {
+    flex-shrink: 0;
+    max-width: 600px;
+    height: auto;
+}
+
+.about-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 1;
+    padding-top: 30px;
+}
+
+.about-title {
+    text-align: center;
+    font-size: 80px;
+    font-weight: 600;
+    margin-left: -10vh;
+    color: #52616B;
+}
+
+.about-exp {
+    font-size: 24px;
+    font-weight: 350;
+    padding-top: 7vh;
 }
 
 .skills {
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
     background-color: #52616B;
+    color: #C9D6DF;
+    padding: 48vh
+}
+
+.section {
+  min-height: 100vh;
+}
+
+.scroll-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+.snap {
+  height: 100vh;
+  scroll-snap-align: start;
 }
