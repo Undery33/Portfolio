@@ -1,15 +1,12 @@
 main {
     font-size: 20px;
     text-align: center;
-    color: rgb(124, 124, 55);
+    color: #1E2022;
 }
 
 .intro {
-    background-color: rgb(115, 177, 177);
-}
-
-.info-link {
-    background-color: azure;
+    background-color: #F0F5F9;
+    padding: 300px 0 150px 0;
 }
 
 .intro-me {
@@ -20,4 +17,12 @@ main {
 .intro-major {
     font-weight: 500;
     font-size: 40px;
+}
+
+.about {
+    background-color: #C9D6DF;
+}
+
+.skills {
+    background-color: #52616B;
 }

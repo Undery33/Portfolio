@@ -1,26 +1,24 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
-import Projects from './pages/Projects/Projects';
-import Work from './pages/Work/Work';
+import Skills from './pages/Skills/Skills';
+import Portfolio from './pages/Portfolio/Portfolio';
 
 export default function App() {
   return (
     <BrowserRouter>
-      <nav>
-        <Link to="/">Undery</Link>
-        <Link to="/about">About</Link>
-        <Link to="/work">Work</Link>
-        <Link to="/projects">Projects</Link>
-      </nav>
+      <Header />
       <main className="p-4">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/work" element={<Work />} />
-          <Route path="/projects" element={<Projects />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/skills" element={<Skills />} />
         </Routes>
       </main>
+      <Footer />
     </BrowserRouter>
   );
 }

@@ -8,12 +8,14 @@ export default function Home() {
   return (
     <main>
       <div className='intro'>
-        <p className='intro-me'>Hello! I'm Undery, <br/></p>
-        <p className='intro-major'>Front End, AI, Data Scientist</p>
+        <p className='intro-me'>React, Python, AWS... <br/></p>
+        <p className='intro-major'>AI를 이용한 주니어 개발자, 홍태의 입니다.</p>
       </div>
-      <div className='info-link'>
-        본인에 대해 간략하게 소개 <br/>
-        GitHub 및 Instagram 등 본인과 관련된 링크 연결
+      <div className='about'>
+        About
+      </div>
+      <div className='skills'>
+        Skills
       </div>
     </main>
   );
