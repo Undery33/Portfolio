@@ -21,6 +21,7 @@ main {
     padding-top: 5vh;
     filter: grayscale(100%);
     transition: filter 0.5s ease;
+    cursor: pointer;
 }
 
 .icon img.active {
@@ -29,11 +30,12 @@ main {
 
 .intro {
     background-color: #F0F5F9;
-    padding: 25% 0 40% 0;
+    padding: 40vh 0;
 }
 
-.intro-me, .intro-major {
-    margin-left: 24vh;
+.intro-me,
+.intro-major {
+    margin-left: 20vh;
 
 }
 
@@ -56,14 +58,14 @@ main {
 .about {
     background-color: #C9D6DF;
     color: #52616B;
-    padding: 12vh 0 0 28vh;
+    padding: 14vh 0 0 28vh;
 }
 
 .about-content {
     display: flex;
     gap: 40px;
     align-items: flex-start;
-    margin-top: 40px;
+    margin-top: 36px;
     flex-wrap: wrap;
 }
 
@@ -92,7 +94,7 @@ main {
 .about-exp {
     font-size: 24px;
     font-weight: 350;
-    padding-top: 7vh;
+    padding: 8vh 8vh;
 }
 
 .skills {
@@ -101,20 +103,40 @@ main {
     text-align: center;
     background-color: #52616B;
     color: #C9D6DF;
-    padding: 48vh
+    padding: 12vh
 }
 
 .section {
-  min-height: 100vh;
+    min-height: 100vh;
 }
 
 .scroll-container {
-  height: 100vh;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
 }
 
 .snap {
-  height: 100vh;
-  scroll-snap-align: start;
+    height: 100vh;
+    scroll-snap-align: start;
+}
+
+@media screen and (min-width: 1921px) {
+
+    .intro-me,
+    .intro-major {
+        margin-left: 42vh;
+    }
+
+    .about {
+        padding: 10vh 0 0 36vh;
+    }
+
+    .about-content img {
+        margin-left: 10vh;
+    }
+
+    .about-exp {
+        padding: 8vh 28vh;
+    }
 }

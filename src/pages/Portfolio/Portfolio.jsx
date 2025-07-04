@@ -1,11 +1,11 @@
-import { useTranslation } from "react-i18next";
+import React, { useState } from "react";
+import "./Portfolio.css";
 
-export default function Projects() {
+export default function Portfolio() {
+
   return (
     <main>
-      <div>
-        Deosoon Polyglot ROL CLOUMER
-      </div>
+      
     </main>
   );
 }
