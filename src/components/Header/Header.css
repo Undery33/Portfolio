@@ -4,12 +4,17 @@
 }
 
 header {
-    position: absolute;
+    position: fixed;
+    top: 0;
     left: 0;
     width: 100%;
+    padding: var(--header-padding) 0;
     z-index: 1000;
     background-color: transparent;
-    padding: var(--header-padding) 0;
+}
+
+header.header--visible {
+    background-color: rgba(27, 27, 27, 0.2);
 }
 
 header a {

@@ -1,40 +1,39 @@
 import { useEffect, useState, useRef } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 import './Home.css';
 
 export default function Home() {
-  // 번역 수행
   const { t } = useTranslation();
 
-  // 스크롤 시 SCROLL 안보이도록 하는 로직
-  const [showScroll, setShowScroll] = useState(true);
+  const mainRef = useRef(null);
   const nextSectionRef = useRef(null);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY >= 0) {
-        setShowScroll(true);
-      } else {
-        setShowScroll(false);
-      }
-      if (window.scrollY === 0) {
-        setShowScroll(true);
-      } else {
-        setShowScroll(false);
-      }
-    };
-    window.addEventListener('scroll', handleScroll);
+  const [message, setMessage] = useState('');
+  const handleSend = () => {
+    if (!message.trim()) return;
+    console.log('send:', message);
+    setMessage('');
+  };
 
+  const [showScroll, setShowScroll] = useState(true);
+
+  useEffect(() => {
+    const mainEl = mainRef.current;
+    if (!mainEl) return;
+
+    const handleScroll = () => {
+      setShowScroll(mainEl.scrollTop === 0);
+    };
+
+    mainEl.addEventListener('scroll', handleScroll);
     handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => mainEl.removeEventListener('scroll', handleScroll);
   }, []);
 
   const handleClick = () => {
     nextSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
     setShowScroll(false);
   };
-
-  // 타이핑 효과
 
   const phrases = [
     "home.juniorDeveloper",
@@ -43,7 +42,6 @@ export default function Home() {
     "home.name",
     "home.nickname"
   ];
-
   const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
@@ -76,67 +74,50 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, [text, isDeleting, loopNum]);
 
-  // 스크롤 로직  
-  const mainRef = useRef(null);
-  // 현재 보여질 섹션 인덱스
   const [pageIndex, setPageIndex] = useState(0);
-  // 스크롤 잠금 플래그
   const isScrolling = useRef(false);
-  // 섹션 요소 배열
   const sections = useRef([]);
 
   useEffect(() => {
-    // 첫 렌더링 후 mainRef에서 section 리스트 추출
     if (mainRef.current) {
-      sections.current = Array.from(
-        mainRef.current.querySelectorAll('section')
-      );
+      sections.current = Array.from(mainRef.current.querySelectorAll('section'));
     }
   }, []);
 
-  const handleWheel = (e) => {
+  const handleWheel = e => {
     e.preventDefault();
     if (isScrolling.current) return;
 
     const delta = e.deltaY;
     let next = pageIndex;
-
-    if (delta > 0 && pageIndex < sections.current.length - 1) {
-      next = pageIndex + 1;
-    } else if (delta < 0 && pageIndex > 0) {
-      next = pageIndex - 1;
-    } else {
-      return;
-    }
+    if (delta > 0 && pageIndex < sections.current.length - 1) next = pageIndex + 1;
+    else if (delta < 0 && pageIndex > 0) next = pageIndex - 1;
+    else return;
 
     isScrolling.current = true;
     setPageIndex(next);
     sections.current[next].scrollIntoView({ behavior: 'smooth' });
-
-    setTimeout(() => {
-      isScrolling.current = false;
-    }, 800);
+    setTimeout(() => { isScrolling.current = false; }, 800);
   };
 
   useEffect(() => {
-    window.addEventListener('wheel', handleWheel, { passive: false });
-    return () => window.removeEventListener('wheel', handleWheel);
+    mainRef.current?.addEventListener('wheel', handleWheel, { passive: false });
+    return () => mainRef.current?.removeEventListener('wheel', handleWheel);
   }, [pageIndex]);
 
-  // HTML 적용
   return (
-    <main ref={mainRef}>
-      <section className='welcome'>
-        <p className='hello'>{t("home.hello")}</p>
-        <div className='setrow'>
+    <main ref={mainRef} className="main">
+      <section className="welcome">
+        <p className="hello">{t("home.hello")}</p>
+        <div className="setrow">
           <span className="sub-left">{t("home.iAm")}</span>
-          <h1 className="title" aria-live='polite'>
+          <h1 className="title" aria-live="polite">
             {text || "\u00A0"}
-            <span className='cursor'>|</span>
+            <span className="cursor">|</span>
           </h1>
           <span className="sub-right">{t("home.am")}</span>
         </div>
-        <div className='icons'>
+        <div className="icons">
           <a href="https://github.com/Undery33" target='_blank' rel='noreferrer' aria-label='GitHub'>
             <img src='/github.png' alt='GitHub icon' />
           </a>
@@ -156,26 +137,45 @@ export default function Home() {
       </section>
 
       {showScroll && (
-        <div
-          className='scroll'
-          onClick={handleClick}
-        >
+        <div className="scroll" onClick={handleClick}>
           <span>SCROLL</span>
-          <span className='arrow'></span>
+          <span className="arrow"></span>
         </div>
       )}
 
+      <section ref={nextSectionRef} className="introduce">
+        <div className="intro-left">
+          <img src="/sample.png" alt="Sample" className="intro-image" />
+        </div>
+        <div className="intro-right">
+          <span className="intro-header">INTRODUCE</span>
+          <div className="intro-text">
+            {[1, 2, 3, 4, 5, 6].map(i => (
+              <p key={i}>
+                <Trans
+                  i18nKey={`home.intro_${i}`}
+                  components={{ h: <span style={{ color: '#fff', fontWeight: '200' }} /> }}
+                />
+              </p>
+            ))}
+            <div className="message">
+              <input
+                type="text"
+                placeholder={t("home.placeholder")}
+                value={message}
+                onChange={e => setMessage(e.target.value)}
+                onKeyDown={e => e.key === 'Enter' && handleSend()}
+              />
+              <button className="send-btn" onClick={handleSend}>
+                <img src="/send.png" alt="Send" width="32px" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+            
 
-      <section ref={nextSectionRef} className='introduce'>
-        <div className='intro-left'>
-          <img src='/sample.png' alt='Sample' className='intro-image' />
-        </div>
-        <div className='intro-right'>
-          <span className='intro-header'>INTRODUCE</span>
-          {[1,2,3,4,5,6].map(i => (
-            <p key={i}>{t(`home.intro_${i}`)}</p>
-          ))}
-        </div>
       </section>
     </main>
   );

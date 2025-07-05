@@ -1,10 +1,21 @@
+import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import "./Header.css";
 import { useTranslation } from "react-i18next";
 
 export default function Header() {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation(); 
+  const [scrolled, setScrolled] = useState(false);
 
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 0);
+    };
+    window.addEventListener("scroll", onScroll);
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  
   const languages = ["ko", "en", "ja"];
 
   const handleChangeLang = () => {
@@ -17,7 +28,7 @@ export default function Header() {
   };
 
   return (
-    <header>
+    <header className={scrolled ? "header header--visible" : "header"}>
       <nav className='nav-container'>
         <NavLink to="/" className='undery'>
           <picture>

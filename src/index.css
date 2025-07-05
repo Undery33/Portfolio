@@ -12,4 +12,9 @@
 
 html, body {
     height: 100%;
+    margin: 0;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    background-color: #1b1b1b;
+    overflow-x: hidden;
 }
