@@ -3,30 +3,39 @@ import "./Header.css";
 import { useTranslation } from "react-i18next";
 
 export default function Header() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  const languages = ["ko", "en", "ja"];
+
+  const handleChangeLang = () => {
+    const currentLang = i18n.language;
+    const currentIndex = languages.indexOf(currentLang);
+    const nextIndex = (currentIndex + 1) % languages.length;
+    const nextLang = languages[nextIndex];
+
+    i18n.changeLanguage(nextLang);
+  };
 
   return (
     <header>
       <nav className='nav-container'>
         <NavLink to="/" className='undery'>
           <picture>
-            <source srcSet='/logo.webp' type='image/webp' />
-            <img src='/logo.webp' alt="It's Me!" width='32' height='32' />
+            <source srcSet='/logo.png' type='image/png' />
+            <img src='/logo.png' alt="It's Me!" width='40' height='40' />
           </picture>
         </NavLink>
         <div className='all-menu'>
           <div className='menu'>
-            <NavLink to="/">{t("Home")}</NavLink>
-            <NavLink to="/about">{t("About")}</NavLink>
-            <NavLink to="/skills">{t("Skills")}</NavLink>
-            <NavLink to="/portfolio">{t("Portfolio")}</NavLink>
+            <NavLink to="/">{t("HOME")}</NavLink>
+            <NavLink to="/about">{t("ABOUT")}</NavLink>
+            <NavLink to="/skills">{t("SKILLS")}</NavLink>
+            <NavLink to="/portfolio">{t("PORTFOLIO")}</NavLink>
+            <NavLink to="/contact">{t("CONTACT")}</NavLink>
           </div>
-          <div className='lang'>
-            한국어 English 日本語
-          </div>
-          <div className='contact'>
-            <button type='button'>CONTACT ME!</button>
-          </div>
+          <button onClick={handleChangeLang}>
+            ({i18n.language.toUpperCase()})
+          </button>
         </div>
       </nav>
     </header>
