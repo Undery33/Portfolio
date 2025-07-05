@@ -9,10 +9,18 @@ export default function Home() {
   const nextSectionRef = useRef(null);
 
   const [message, setMessage] = useState('');
+  const [isSent, setIsSent] = useState(false);
+  const [isFilling, setIsFilling] = useState(false);
+
   const handleSend = () => {
     if (!message.trim()) return;
-    console.log('send:', message);
-    setMessage('');
+    setIsFilling(true);
+    setTimeout(() => {
+      console.log('send:', message);
+      setMessage('');
+      setIsSent(true);
+      setIsFilling(false);
+    }, 1000);
   };
 
   const [showScroll, setShowScroll] = useState(true);
@@ -158,23 +166,36 @@ export default function Home() {
                 />
               </p>
             ))}
-            <div className="message">
-              <input
-                type="text"
-                placeholder={t("home.placeholder")}
-                value={message}
-                onChange={e => setMessage(e.target.value)}
-                onKeyDown={e => e.key === 'Enter' && handleSend()}
-              />
-              <button className="send-btn" onClick={handleSend}>
-                <img src="/send.png" alt="Send" width="32px" />
-              </button>
+            <div className={`message ${isSent ? 'sent' : ''} ${isFilling ? 'fill-active' : ''}`}>
+              {!isSent ? (
+                <>
+                  <input
+                    type="text"
+                    placeholder={t("home.placeholder")}
+                    value={message}
+                    onChange={e => setMessage(e.target.value)}
+                    onKeyDown={e => e.key === 'Enter' && handleSend()}
+                  />
+                  <button
+                    className="send-btn"
+                    onClick={handleSend}
+                    disabled={isFilling}
+                  >
+                    <img src="/send.png" alt="Send" width="24" height="24" />
+                  </button>
+                </>
+              ) : (
+                <div className="sent-content">
+                  <img src="/send.png" alt="Sent" className="sent-icon" width="24" height="24" />
+                  <span className='sent-text'>{t("home.complect")}</span>
+                </div>
+              )}
             </div>
           </div>
         </div>
       </section>
       <section>
-            
+
 
       </section>
     </main>

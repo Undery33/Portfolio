@@ -27,7 +27,8 @@ i18n
             "intro_4": "If you encounter any <h>bugs or errors</h> while browsing the page,",
             "intro_5": "please use the input below to describe <h>what kind of error occurred</h>.",
             "intro_6": "Or feel free to write <h>anything you’d like to say to me</h>, and I’ll read it 😊",
-            "placeholder": "Please Enter Here!"
+            "placeholder": "Please Enter Here!",
+            "complect": "Transmission finished!"
           }
         }
       },
@@ -48,7 +49,8 @@ i18n
             "intro_4": "만약 웹 페이지를 구경하면서 <h>버그 및 오류가 발생</h>할 시",
             "intro_5": "아래 입력을 통해 <h>어떠한 오류가 발생하였는지</h> 작성해주세요.",
             "intro_6": "또는 <h>저에게 하고 싶은 말</h>을 적어주시면 읽어보겠습니다 😊",
-            "placeholder": "여기에 입력해주세요!"
+            "placeholder": "여기에 입력해주세요!",
+            "complect": "전송 완료!"
           }
         }
       },
@@ -69,7 +71,8 @@ i18n
             "intro_4": "もしページを閲覧中に<h>バグやエラーが発生</h>した場合は、",
             "intro_5": "下の入力欄から<h>どのようなエラーが起きたのか</h>教えてください。",
             "intro_6": "または、<h>私に伝えたいこと</h>があれば書いてください。<br/>読ませていただきます 😊",
-            "placeholder": "ここに入力してください！"
+            "placeholder": "ここに入力してください！",
+            "complect": "送信完了！"
           }
         }
       }
