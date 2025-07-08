@@ -45,7 +45,7 @@
 }
 
 .sub-right {
-    justify-self: start;
+    justify-self: flex-start;
     padding-left: 10vh;
 }
 
@@ -305,13 +305,13 @@
 .exper-skills {
     width: 100%;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     padding: 18vh 32vh;
     gap: 0.5rem;
 }
 
 .exper-skills div {
-    text-align: start;
+    text-align: flex-start;
 }
 
 .exper {
@@ -334,7 +334,7 @@
 .skills-container {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     gap: 44px;
     width: 100%;
 }
