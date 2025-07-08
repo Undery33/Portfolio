@@ -4,9 +4,9 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: var(--site-max-width);
+    max-width: 100%;
     margin: 0 auto;
-    padding: 0 var(--header-padding);
+    padding: 0 3vh;
 }
 
 .all-menu {
@@ -20,16 +20,4 @@
     display: flex;
     gap: 6vh;
     font-size: 18px;
-}
-
-@media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-    .menu {
-        width: 100%;
-        justify-content: center;
-    }
 }

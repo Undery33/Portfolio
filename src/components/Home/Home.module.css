@@ -348,6 +348,7 @@
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 34px;
     width: 100%;
+    margin-top: -5vh;
 }
 
 .computer-lang > div {
@@ -366,13 +367,13 @@
 
 .computer-lang p {    
     font-size: 28px;
+    margin-top: 0.6em;
 }
 
 .computer-lang div img {
     width: 60px;
     height: auto;
     object-fit: contain;
-    margin-bottom: 10px;
 }
 
 .computer-lang div span {
@@ -380,7 +381,7 @@
     color: #bfbfbf;
     font-weight: 300;
     font-size: 16px;
-    margin-top: 10px;
+    margin-top: -20px;
     overflow: hidden;
     white-space: pre-line;
 }

@@ -1,15 +1,11 @@
-:root {
-    --header-padding: 3vh;
-    --site-max-width: 100%;
-}
 
 header {
     position: fixed;
     top: 0;
-    left: 0;
+    right: 10vh;
     width: 100%;
-    padding: var(--header-padding) 0;
-    z-index: 1000;
+    padding: 3vh 0;
+    z-index: 10;
     background-color: transparent;
 }
 

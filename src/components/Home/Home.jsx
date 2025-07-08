@@ -23,6 +23,7 @@ export default function Home() {
       setIsSent(true);
       setIsFilling(false);
     }, 1000);
+    console.log(message);
   }, [message]);
 
   // SCROLL 안내
