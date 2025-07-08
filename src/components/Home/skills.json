@@ -1,0 +1,62 @@
+[
+  {
+    "img": "/lang/python.png",
+    "title": "Python",
+    "descKey": "home.python"
+  },
+  {
+    "img": "/lang/js.png",
+    "title": "JavaScript",
+    "descKey": "home.javascript"
+  },
+  {
+    "img": "/lang/node.png",
+    "title": "Node.js",
+    "descKey": "home.nodejs"
+  },
+  {
+    "img": "/lang/react.png",
+    "title": "React",
+    "descKey": "home.react"
+  },
+  {
+    "img": "/lang/pytorch.png",
+    "title": "PyTorch",
+    "descKey": "home.pytorch"
+  },  
+  {
+    "img": "/lang/git.png",
+    "title": "Git/GitHub",
+    "descKey": "home.git"
+  },
+  {
+    "img": "/lang/ec2.png",
+    "title": "AWS EC2",
+    "descKey": "home.ec2"
+  },
+  {
+    "img": "/lang/dynamodb.png",
+    "title": "AWS DynamoDB",
+    "descKey": "home.dynamodb"
+  },
+  {
+    "img": "/lang/translate.png",
+    "title": "AWS Translate",
+    "descKey": "home.translate"
+  },
+  {
+    "img": "/lang/ubuntu.png",
+    "title": "Ubuntu",
+    "descKey": "home.ubuntu"
+  },
+  {
+    "img": "/lang/openai.png",
+    "title": "OpenAI API",
+    "descKey": "home.openai"
+  },
+  {
+    "img": "/lang/huggingface.png",
+    "title": "Hugging Face",
+    "descKey": "home.huggingface"
+  }
+]

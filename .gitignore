@@ -1,0 +1,97 @@
+# 기존 항목 복사(아래는 추가 추천)
+.env*
+.env.*
+!.env.example
+
+# Next.js build output
+.next/
+out/
+
+# npm global installs
+.npm/
+
+# OS별 파일
+.DS_Store
+Thumbs.db
+Icon?
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Mac junk
+.AppleDouble
+.LSOverride
+
+# Windows junk
+ehthumbs.db
+Desktop.ini
+
+# Log files
+*.log
+logs/
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Build output
+dist/
+build/
+dist-ssr/
+
+# Editor folders
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Next.js local env
+.next/
+out/
+.vercel/
+
+# TypeScript
+*.tsbuildinfo
+
+# Storybook
+storybook-static/
+
+# Misc
+*.local
+*.cache
+.cache/
+*.pid
+*.seed
+*.pid.lock
+*.tgz
+
+# npm
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# VSCode settings
+.vscode/*
+!.vscode/extensions.json
+
+# Other common IDE
+*.iml
+
+# ESLint/Prettier cache
+.eslintcache
+.prettiercache
+
+# Optional: Firebase, Netlify, Vercel
+.firebase/
+.netlify/
+.vercel/

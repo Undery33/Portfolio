@@ -1,0 +1,32 @@
+:root {
+    --header-padding: 3vh;
+    --site-max-width: 100%;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: var(--header-padding) 0;
+    z-index: 1000;
+    background-color: transparent;
+}
+
+header.header--visible {
+    background-color: rgba(27, 27, 27, 0.2);
+}
+
+header a {
+    text-decoration-line: none;
+    color: white;
+}
+
+header a.active {
+    color: #7F7F7F;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
