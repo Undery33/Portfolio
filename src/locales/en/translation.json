@@ -1,0 +1,33 @@
+{
+  "home": {
+    "juniorDeveloper": "Junior Developer",
+    "frontendDeveloper": "Frontend Developer",
+    "aiDeveloper": "AI Developer",
+    "name": "Taeui Hong",
+    "nickname": "Undery",
+    "hello": "Hello,",
+    "iAm": "I am",
+    "am": "",
+    "intro_1": "Hello, <h>Taeui Hong</h> here.",
+    "intro_2": "This web page is for <h>portfolio, resume, and my information</h>.",
+    "intro_3": "As a frontend developer, I created it <h>with the web</h>.",
+    "intro_4": "If you find any <h>bugs or errors</h> while browsing,",
+    "intro_5": "please write <h>what happened</h> in the input below.",
+    "intro_6": "Or, leave me <h>any message</h> you want. I’ll read it 😊",
+    "placeholder": "Please enter here!",
+    "complect": "Sent!",
+    "experience": "Experience",
+    "python": "Used for AI, data analysis, and data transformation.",
+    "javascript": "Used for dynamic UI, async communication, and SPA implementation.",
+    "nodejs": "Used for server-side logic and real-time data processing.",
+    "react": "Used for component-based UI, state management, and SPA building.",
+    "pytorch": "Used for data training and prediction with Transformer models.",
+    "git": "Used for version control, team collaboration, code reviews, and issue tracking.",
+    "ec2": "Used for bot deployment/operation via pm2.",
+    "dynamodb": "Used for fast data transmission/checking as an AWS NoSQL DB.",
+    "translate": "Developed/operated a service using translation API results.",
+    "ubuntu": "Used as the Linux distro on EC2 for server setup and deployment.",
+    "openai": "Implemented a chatbot with GPT-4o API; experienced prompt design and cost management.",
+    "huggingface": "Used for LLM model usage/fine-tuning, and testing community models."
+  }
+}
