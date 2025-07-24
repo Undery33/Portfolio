@@ -1,6 +1,6 @@
 // src/pages/_app.jsx
 import '../styles/globals.css';
-import Header from '../components/Header/Header';
+import Header from '../components/header/header';
 import '../styles/globals.css';
 import '../i18n';
 

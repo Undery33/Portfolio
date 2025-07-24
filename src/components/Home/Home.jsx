@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef, useCallback } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import skills from './skills.json';
-import SkillCard from './SkillCard';
+import SkillCard from './skillCard';
 import styles from './Home.module.css';
 
 export default function Home() {

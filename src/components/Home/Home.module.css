@@ -3,7 +3,6 @@
     overflow-y: auto;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
-    background-color: #1B1B1B;
 }
 
 .main>section {

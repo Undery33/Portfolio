@@ -2,12 +2,13 @@
 header {
     position: fixed;
     top: 0;
-    right: 10vh;
+    left: 0;
     width: 100%;
     padding: 3vh 0;
     z-index: 10;
     background-color: transparent;
 }
+
 
 header.header--visible {
     background-color: rgba(27, 27, 27, 0.2);
@@ -25,4 +26,5 @@ header a.active {
 body {
     margin: 0;
     padding: 0;
+    background-color: #1B1B1B;
 }
